@@ -3,35 +3,35 @@ require 'selenium-webdriver'
 require 'benchmark'
 
 LOCATORS = {
-  :dues_header_id_and_class => {
+  :header_id_and_class => {
     :css => "#table2 thead .dues",
     :xpath => "//table[@id='table2']//thead//*[@class='dues']"
   },
-  :dues_header_id_class_and_direct_desc => {
+  :header_id_class_and_direct_desc => {
     :css => "#table2 > thead .dues",
     :xpath => "//table[@id='table2']/thead//*[@class='dues']"
   },
-  :dues_header_traversing => {
+  :header_traversing => {
     :css => "#table2 thead tr th:nth-of-type(4)",
     :xpath => "//table[@id='table2']//thead//tr//th[4]"
   },
-  :dues_header_traversing_and_direct_desc => {
+  :header_traversing_and_direct_desc => {
     :css => "#table2 > thead > tr > th:nth-of-type(4)",
     :xpath => "//table[@id='table2']/thead/tr/th[4]"
   },
-  :dues_cell_id_and_class => {
+  :cell_id_and_class => {
     :css => "#table2 tbody .dues",
     :xpath => "//table[@id='table2']//tbody//*[@class='dues']"
   },
-  :dues_cell_id_class_and_direct_desc => {
+  :cell_id_class_and_direct_desc => {
     :css => "#table2 > tbody .dues",
     :xpath => "//table[@id='table2']/tbody//*[@class='dues']"
   },
-  :dues_cell_traversing => {
+  :cell_traversing => {
     :css => "#table2 tbody tr td:nth-of-type(4)",
     :xpath => "//table[@id='table2']//tbody//tr//td[4]"
   },
-  :dues_cell_traversing_and_direct_desc => {
+  :cell_traversing_and_direct_desc => {
     :css => "#table2 > tbody > tr > td:nth-of-type(4)",
     :xpath => "//table[@id='table2']/tbody/tr/td[4]"
   }
