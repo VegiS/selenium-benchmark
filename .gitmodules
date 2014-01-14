@@ -1,0 +1,3 @@
+[submodule "the-internet"]
+	path = the-internet
+	url = git@github.com:tourdedave/the-internet.git
