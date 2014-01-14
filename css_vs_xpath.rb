@@ -42,7 +42,9 @@ LOCATORS = {
 browser = Selenium::WebDriver.for :firefox # replace :firefox with the browser you're having trouble with
 
 begin
-  browser.get "http://the-internet.herokuapp.com/tables"
+  # Start the-internet before running
+  # ruby the-internet/server.rb
+  browser.get "http://localhost:4567/tables"
 
   Benchmark.ips(10) do |x|
     LOCATORS.each do |example, data|
