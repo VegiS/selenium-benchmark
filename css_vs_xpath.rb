@@ -37,7 +37,7 @@ LOCATORS = {
   }
 }
 
-ENV['iterations'] ||= '50'
+ENV['iterations'] ||= '20'
 # override the number of iterations at runtime with '`iterations=20 ruby css_vs_xpath.rb`
 
 ENV['browser'] ||= 'firefox'
@@ -55,6 +55,8 @@ $stdout.sync = true
 
 driver.get "http://localhost:4567/tables"
 
+# The benchmarking approach was borrowed from
+# http://rubylearning.com/blog/2013/06/19/how-do-i-benchmark-ruby-code/
 Benchmark.bmbm(27) do |bm|
   LOCATORS.each do |example, data|
     data.each do |strategy, locator|
