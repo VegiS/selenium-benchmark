@@ -39,22 +39,25 @@ LOCATORS = {
   }
 }
 
-browser = Selenium::WebDriver.for :firefox # replace :firefox with the browser you're having trouble with
+browser ||= 'firefox' # override browser at runtime with `browser='browser_name' ruby css_vs_xpath.rb`
+browser = Selenium::WebDriver.for browser.to_sym
 
 begin
-  # Start the-internet before running
-  # ruby the-internet/server.rb
-  browser.get "http://localhost:4567/tables"
+  # Set up and start the-internet before running the test
+  # `cd the-internet`
+  # `bundle install`
+  # `ruby server.rb`
+  driver.get "http://localhost:4567/tables"
 
   Benchmark.ips(10) do |x|
     LOCATORS.each do |example, data|
       data.each do |strategy, locator|
         # binding.pry
-        x.report(example.to_s + " using " + strategy.to_s) { browser.find_element(strategy => locator) }
+        x.report(example.to_s + " using " + strategy.to_s) { driver.find_element(strategy => locator) }
       end
     end
   end
 
   ensure
-    browser.quit
+    driver.quit
 end
