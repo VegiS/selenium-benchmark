@@ -39,8 +39,8 @@ LOCATORS = {
   }
 }
 
-browser ||= 'firefox' # override browser at runtime with `browser='browser_name' ruby css_vs_xpath.rb`
-browser = Selenium::WebDriver.for browser.to_sym
+ENV['browser'] ||= 'firefox' # override browser at runtime with `browser='browser_name' ruby css_vs_xpath.rb`
+browser = Selenium::WebDriver.for ENV['browser'].to_sym
 
 begin
   # Set up and start the-internet before running the test
