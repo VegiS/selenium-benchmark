@@ -42,22 +42,23 @@ LOCATORS = {
 ENV['browser'] ||= 'firefox' # override browser at runtime with `browser='browser_name' ruby css_vs_xpath.rb`
 driver = Selenium::WebDriver.for ENV['browser'].to_sym
 
-begin
-  # Set up and start the-internet before running the test
-  # `cd the-internet`
-  # `bundle install`
-  # `ruby server.rb`
-  driver.get "http://localhost:4567/tables"
+# Set up and start the-internet before running the test
+# `cd the-internet`
+# `bundle install`
+# `ruby server.rb`
+driver.get "http://localhost:4567/tables"
 
-  Benchmark.ips(10) do |x|
-    LOCATORS.each do |example, data|
-      data.each do |strategy, locator|
-        # binding.pry
+Benchmark.ips(10) do |x|
+  LOCATORS.each do |example, data|
+    data.each do |strategy, locator|
+      # binding.pry
+      begin
         x.report(example.to_s + " using " + strategy.to_s) { driver.find_element(strategy => locator) }
+      rescue NoSuchElementException
+        puts "Unable to use this locator strategy on #{ENV['browser']}"
       end
     end
   end
-
-  ensure
-    driver.quit
 end
+
+driver.quit
