@@ -37,7 +37,7 @@ LOCATORS = {
   }
 }
 
-ENV['iterations'] ||= '20'
+ENV['iterations'] ||= '50'
 # override the number of iterations at runtime with '`iterations=20 ruby css_vs_xpath.rb`
 
 ENV['browser'] ||= 'firefox'
@@ -52,15 +52,15 @@ driver = Selenium::WebDriver.for ENV['browser'].to_sym
 driver.get "http://localhost:4567/tables"
 
 Benchmark.bmbm(27) do |bm|
-  ENV['iterations'].to_i.times do
-    LOCATORS.each do |example, data|
-      data.each do |strategy, locator|
-        bm.report(example.to_s + " using " + strategy.to_s) do
-          begin
+  LOCATORS.each do |example, data|
+    data.each do |strategy, locator|
+      bm.report(example.to_s + " using " + strategy.to_s) do
+        begin
+          ENV['iterations'].to_i.times do
              driver.find_element(strategy => locator)
-          rescue Selenium::WebDriver::Error::NoSuchElementError
-            puts "N/A"
           end
+        rescue Selenium::WebDriver::Error::NoSuchElementError
+          puts "N/A"
         end
       end
     end
