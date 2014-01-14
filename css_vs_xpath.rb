@@ -52,10 +52,12 @@ Benchmark.ips(10) do |x|
   LOCATORS.each do |example, data|
     data.each do |strategy, locator|
       # binding.pry
-      begin
-        x.report(example.to_s + " using " + strategy.to_s) { driver.find_element(strategy => locator) }
-      rescue Selenium::WebDriver::Error::NoSuchElementError
-        puts "Unable to use this locator strategy on #{ENV['browser']}"
+      x.report(example.to_s + " using " + strategy.to_s) do
+        begin
+           driver.find_element(strategy => locator)
+        rescue Selenium::WebDriver::Error::NoSuchElementError
+          puts "Unable to use this locator strategy on #{ENV['browser']}"
+        end
       end
     end
   end
