@@ -1,8 +1,6 @@
 require 'rubygems'
 require 'selenium-webdriver'
 require 'benchmark'
-require 'benchmark/ips'
-require 'pry'
 
 LOCATORS = {
   :dues_header_id_and_class => {
@@ -39,7 +37,12 @@ LOCATORS = {
   }
 }
 
-ENV['browser'] ||= 'firefox' # override browser at runtime with `browser='browser_name' ruby css_vs_xpath.rb`
+ENV['iterations'] ||= '20'
+# override the number of iterations at runtime with '`iterations=20 ruby css_vs_xpath.rb`
+
+ENV['browser'] ||= 'firefox'
+# override browser at runtime with `browser='browser_name' ruby css_vs_xpath.rb`
+
 driver = Selenium::WebDriver.for ENV['browser'].to_sym
 
 # Set up and start the-internet before running the test
@@ -48,15 +51,16 @@ driver = Selenium::WebDriver.for ENV['browser'].to_sym
 # `ruby server.rb`
 driver.get "http://localhost:4567/tables"
 
-Benchmark.ips(10) do |x|
-  LOCATORS.each do |example, data|
-    data.each do |strategy, locator|
-      # binding.pry
-      x.report(example.to_s + " using " + strategy.to_s) do
-        begin
-           driver.find_element(strategy => locator)
-        rescue Selenium::WebDriver::Error::NoSuchElementError
-          puts "Unable to use this locator strategy on #{ENV['browser']}"
+Benchmark.bmbm(27) do |bm|
+  ENV['iterations'].to_i.times do
+    LOCATORS.each do |example, data|
+      data.each do |strategy, locator|
+        bm.report(example.to_s + " using " + strategy.to_s) do
+          begin
+             driver.find_element(strategy => locator)
+          rescue Selenium::WebDriver::Error::NoSuchElementError
+            puts "N/A"
+          end
         end
       end
     end
