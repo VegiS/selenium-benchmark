@@ -49,6 +49,10 @@ driver = Selenium::WebDriver.for ENV['browser'].to_sym
 # `cd the-internet`
 # `bundle install`
 # `ruby server.rb`
+
+$stdout = File.new("benchmark_#{ENV['browser']}.log", 'w')
+$stdout.sync = true
+
 driver.get "http://localhost:4567/tables"
 
 Benchmark.bmbm(27) do |bm|
