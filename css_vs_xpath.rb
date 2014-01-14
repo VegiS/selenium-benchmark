@@ -37,7 +37,7 @@ LOCATORS = {
   }
 }
 
-ENV['iterations'] ||= '20'
+ENV['iterations'] ||= '100'
 # override the number of iterations at runtime with '`iterations=20 ruby css_vs_xpath.rb`
 
 ENV['browser'] ||= 'firefox'
