@@ -1,9 +1,9 @@
 require_relative 'base'
+require 'benchmark'
 
 class Tables < Base
-  attr_reader :locators
 
-  @locators = {
+  LOCATORS = {
     :header_id_and_class => {
       :css => "#table2 thead .dues",
       :xpath => "//table[@id='table2']//thead//*[@class='dues']"
@@ -39,12 +39,12 @@ class Tables < Base
   }
 
   def visit
-    load '/tables'
+    go_to '/tables'
   end
 
   def benchmark!
     Benchmark.bmbm(27) do |bm|
-      tables.locators.each do |example, data|
+      LOCATORS.each do |example, data|
         data.each do |strategy, locator|
           bm.report(example.to_s + " using " + strategy.to_s) do
             begin

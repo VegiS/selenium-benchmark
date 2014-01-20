@@ -12,7 +12,7 @@ class Base
     driver.find_element locator
   end
 
-  def load(url)
+  def go_to(url)
     driver.get ENV['base_url'] + url
   end
 

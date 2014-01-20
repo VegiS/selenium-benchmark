@@ -1,5 +1,4 @@
-require_relative '../lib/config'
-require_relative '../lib/page-objects/tables'
+require_relative 'lib/page-objects/tables'
 #require_relative '../lib/page-objects/large_dom'
 
 ENV['iterations'] ||= '100'
@@ -19,7 +18,7 @@ ENV['base_url'] = 'http://localhost:4567'
 $stdout = File.new("benchmark_#{ENV['browser']}.log", 'w')
 $stdout.sync = true
 
-tables = Tables.new(@driver)
+tables = Tables.new(driver)
 tables.visit
 tables.benchmark!
 
