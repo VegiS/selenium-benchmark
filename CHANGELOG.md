@@ -1,3 +1,7 @@
+#0.2.2
+
++ Added rake tasks to simplify launching each browser
+
 #0.2.1
 
 + Added .gitkeep to keep the benchmark directory active in GitHub
