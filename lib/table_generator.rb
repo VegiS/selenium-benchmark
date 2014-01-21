@@ -23,10 +23,11 @@ class TableGenerator
         log = File.read(log)
         log.gsub(/ using \w+/,'')
         @titles  = log.scan(/^.*_\w+/).uniq
-        datas    = log.scan(/\(.*\)/).each do |datum|
-          datum.gsub!(/\)/,'')
-          datum.gsub!(/\(/,'')
-          datum.strip!
+        job_log = log.scan(/real.*/m).first
+        datas    = job_log.scan(/\(.*\)/).each do |data|
+          data.gsub!(/\)/,'')
+          data.gsub!(/\(/,'')
+          data.strip!
         end
         count = 0
         harvest = []
@@ -58,9 +59,22 @@ class TableGenerator
       logs.each do |log|
         slug = log.scan(/benchmarks\/(.*).log/)[0][0]
         browser_name = slug.scan(/(.*)_/)[0][0]
-        browser_number = slug.scan(/_(.*)/)[0][0]
+        browser_number = slug.scan(/_(\d.*)/)[0][0]
         headings << "#{browser_name[0].capitalize} #{browser_number}"
         headings << "#{browser_name[0].capitalize} #{browser_number}"
+      end
+      headings.each do |heading|
+        if heading.include? 'F'
+          heading.gsub!(/F/,'FF')
+        elsif heading.include? 'C'
+          heading.gsub!(/C/,'Cr')
+        elsif heading.include? 'I'
+          heading.gsub!(/I/,'IE')
+        elsif heading.include? 'O'
+          heading.gsub!(/O/,'Op')
+        else
+          heading
+        end
       end
       headings
     end
@@ -69,11 +83,9 @@ class TableGenerator
       headings = get_table_headings
 
       tmp = ['']
-      (headings.count-1)/2.times do |count|
-        unless count == 0
-          tmp << 'CSS'
-          tmp << 'XPath'
-        end
+      ((headings.count-1)/2).times do |count|
+        tmp << 'CSS'
+        tmp << 'XPath'
       end
       rows = []
       rows << tmp
