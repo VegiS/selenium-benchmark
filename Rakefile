@@ -31,3 +31,27 @@ task :report do
   gen = TableGenerator.new
   gen.generate
 end
+
+namespace :run do
+
+  desc 'Firefox'
+  task :firefox, :version do |t, args|
+    system("browser='firefox' browser_version=#{'26' unless args[:version]} ruby lib/selenium-benchmark.rb")
+  end
+
+  desc 'Chrome'
+  task :chrome, :version do |t, args|
+    system("browser='chrome' browser_version=#{'32' unless args[:version]} ruby lib/selenium-benchmark.rb")
+  end
+
+  desc 'IE'
+  task :internet_explorer, :version do |t, args|
+    system("browser='internet_explorer' browser_version=#{'8' unless args[:version]} ruby lib/selenium-benchmark.rb")
+  end
+
+  desc 'Opera'
+  task :opera do
+    `browser='chrome' browser_version=12.16 ruby lib/selenium-benchmark.rb`
+  end
+
+end
