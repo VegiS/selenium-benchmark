@@ -1,3 +1,7 @@
+#0.2.5
+
++ Fixed some rendering bugs in the report generator
+
 #0.2.4
 
 + Took out the error output when a locator can't be found and added back in '(N/A)'
