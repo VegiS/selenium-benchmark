@@ -30,6 +30,9 @@ class TableGenerator
           data.gsub!(/\(/,'')
           data.strip!
         end
+        datas.map! do |data|
+          data.to_f.round(2)
+        end
         count = 0
         harvest = []
         @titles.count.times do |i|
