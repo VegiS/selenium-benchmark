@@ -1,6 +1,10 @@
+#0.2.6
+
++ Fixed a rendering bug with IE test data in the report
+
 #0.2.5
 
-+ Fixed some rendering bugs in the report generator
++ Fixed some rendering bugs in the report generator and improved browser naming
 
 #0.2.4
 
