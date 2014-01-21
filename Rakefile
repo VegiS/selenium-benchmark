@@ -60,9 +60,10 @@ namespace :run do
   end
 
   desc 'Opera'
-  task :opera do
+  task :opera, :selenium_server_path do |t, args|
     ENV['browser'] = 'opera'
     ENV['browser_version'] = '12.16'
+    ENV['SELENIUM_SERVER_JAR'] = args[:selenium_server_path]
     launch
   end
 
