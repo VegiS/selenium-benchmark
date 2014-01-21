@@ -1,3 +1,7 @@
+#0.2.7
+
++ Added the ability to pass the Selenium Standalone Server path on Opera runs (which sets it as an environment variable) -- a required step to run Opera Driver
+
 #0.2.6
 
 + Fixed a rendering bug with IE test data in the report
