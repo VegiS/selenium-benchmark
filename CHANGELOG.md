@@ -1,3 +1,7 @@
+#0.2.4
+
++ Took out the error output when a locator can't be found and added back in '(N/A)'
+
 #0.2.3
 
 + Fixed bugs in rake tasks to launch browsers
