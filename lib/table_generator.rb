@@ -5,13 +5,14 @@ class TableGenerator
   attr_reader :logs, :harvests
 
   def initialize
-    @logs = Dir.glob('benchmarks/*.log')
+    current_dir = File.join(File.dirname(File.expand_path(__FILE__)))
+    @logs = Dir.glob(current_dir+'/../benchmarks/*.log')
     @harvests = []
     parse_logs
     prep_data
   end
 
-  def run
+  def generate
     render
   end
 
@@ -52,10 +53,30 @@ class TableGenerator
       end
     end
 
+    def get_table_headings
+      headings = ['']
+      logs.each do |log|
+        slug = log.scan(/benchmarks\/(.*).log/)[0][0]
+        browser_name = slug.scan(/(.*)_/)[0][0]
+        browser_number = slug.scan(/_(.*)/)[0][0]
+        headings << "#{browser_name[0].capitalize} #{browser_number}"
+        headings << "#{browser_name[0].capitalize} #{browser_number}"
+      end
+      headings
+    end
+
     def render
-      headings = ['', 'Cr 32', 'Cr 32', 'FF 26', 'FF 26', 'IE 8', 'IE 8', 'Op 12', 'Op 12']
+      headings = get_table_headings
+
+      tmp = ['']
+      (headings.count-1)/2.times do |count|
+        unless count == 0
+          tmp << 'CSS'
+          tmp << 'XPath'
+        end
+      end
       rows = []
-      rows << ['', 'CSS', 'XPath', 'CSS', 'XPath', 'CSS', 'XPath', 'CSS', 'XPath']
+      rows << tmp
 
       @row.each do |ro|
         rows << ro
@@ -64,7 +85,3 @@ class TableGenerator
       puts Terminal::Table.new headings: headings, rows: rows
     end
 end
-
-#current_dir = File.join(File.dirname(File.expand_path(__FILE__)))
-#$stdout = File.new("#{current_dir}/../benchmarks/report.out", 'w')
-#$stdout.sync = true

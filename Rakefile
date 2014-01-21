@@ -29,5 +29,5 @@ desc 'Generate report from benchmark data'
 task :report do
   require_relative 'lib/table_generator'
   gen = TableGenerator.new
-  gen.run
+  gen.generate
 end
