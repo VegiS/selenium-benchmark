@@ -1,3 +1,7 @@
+#0.2.1
+
++ Added .gitkeep to keep the benchmark directory active in GitHub
+
 #0.2.0
 Release date: Jan 21, 2014
 
