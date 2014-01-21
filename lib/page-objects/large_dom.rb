@@ -5,17 +5,45 @@ class LargeDOM < Base
 
   LOCATORS = {
     sibling_traversal: {
-      # this works
-      css: "div#siblings > div:nth-of-type(1) > div:nth-of-type(1)",
-      xpath: "//div[@id='siblings']/div[1]/div[1]"
-      # this doesn't work
-      #css: "div#siblings > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
-      #xpath: "//div[@id='siblings']/div[1]/div[1]/div[1]"
-    }#,
-#    sibling_traversal_by_class: {
-#      css: "div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1",
-#      xpath: "//div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]"
-#    }
+      css: "div#siblings > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3) > div:nth-of-type(3)",
+      xpath: "//div[@id='siblings']/div[1]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]/div[3]"
+    },
+    sibling_traversal_by_class: {
+      css: "div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1",
+      xpath: "//div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]"
+    },
+    table_header_id_and_class: {
+      css: "#large-table thead .column-50",
+      xpath: "//table[@id='large-table']//thead//*[@class='column-50']"
+    },
+    table_header_id_class_and_direct_desc: {
+      css: "#large-table > thead .column-50",
+      xpath: "//table[@id='large-table']/thead//*[@class='column-50']"
+    },
+    table_header_traversing: {
+      css: "#large-table thead tr th:nth-of-type(50)",
+      xpath: "//table[@id='large-table']//thead//tr//th[50]"
+    },
+    table_header_traversing_and_direct_desc: {
+      css: "#large-table > thead > tr > th:nth-of-type(50)",
+      xpath: "//table[@id='large-table']/thead/tr/th[50]"
+    },
+    table_cell_id_and_class: {
+      css: "#large-table tbody .column-50",
+      xpath: "//table[@id='large-table']//tbody//*[@class='column-50']"
+    },
+    table_cell_id_class_and_direct_desc: {
+      css: "#large-table > tbody .column-50",
+      xpath: "//table[@id='large-table']/tbody//*[@class='column-50']"
+    },
+    table_cell_traversing: {
+      css: "#large-table tbody tr td:nth-of-type(50)",
+      xpath: "//table[@id='large-table']//tbody//tr//td[50]"
+    },
+    table_cell_traversing_and_direct_desc: {
+      css: "#large-table > tbody > tr > td:nth-of-type(50)",
+      xpath: "//table[@id='large-table']/tbody/tr/td[50]"
+    }
   }
 
   attr_reader :driver

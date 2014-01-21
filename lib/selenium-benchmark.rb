@@ -6,7 +6,7 @@ ENV['iterations'] ||= '100'
 ENV['browser'] ||= 'firefox'
 ENV['browser_version'] ||= '1'
 ENV['base_url'] = 'http://localhost:4567'
-ENV['log_write'] = 'off'
+ENV['log_write'] = 'on'
 
 if ENV['log_write'] == 'on'
   current_dir = File.join(File.dirname(File.expand_path(__FILE__)))
