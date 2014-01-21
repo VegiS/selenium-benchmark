@@ -1,3 +1,8 @@
+#0.2.8
+
++ Trimmed the Opera table header back to '12' from '12.16'
++ Rounded the data output to 3 decimal places
+
 #0.2.7
 
 + Added the ability to pass the Selenium Standalone Server path on Opera runs (which sets it as an environment variable) -- a required step to run Opera Driver
