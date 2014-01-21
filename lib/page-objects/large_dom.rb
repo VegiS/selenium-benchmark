@@ -13,35 +13,35 @@ class LargeDOM < Base
       xpath: "//div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]/div[contains(@class, 'item-1')]"
     },
     table_header_id_and_class: {
-      css: "#large-table thead .column-50",
+      css: "table#large-table thead .column-50",
       xpath: "//table[@id='large-table']//thead//*[@class='column-50']"
     },
     table_header_id_class_and_direct_desc: {
-      css: "#large-table > thead .column-50",
+      css: "table#large-table > thead .column-50",
       xpath: "//table[@id='large-table']/thead//*[@class='column-50']"
     },
     table_header_traversing: {
-      css: "#large-table thead tr th:nth-of-type(50)",
+      css: "table#large-table thead tr th:nth-of-type(50)",
       xpath: "//table[@id='large-table']//thead//tr//th[50]"
     },
     table_header_traversing_and_direct_desc: {
-      css: "#large-table > thead > tr > th:nth-of-type(50)",
+      css: "table#large-table > thead > tr > th:nth-of-type(50)",
       xpath: "//table[@id='large-table']/thead/tr/th[50]"
     },
     table_cell_id_and_class: {
-      css: "#large-table tbody .column-50",
+      css: "table#large-table tbody .column-50",
       xpath: "//table[@id='large-table']//tbody//*[@class='column-50']"
     },
     table_cell_id_class_and_direct_desc: {
-      css: "#large-table > tbody .column-50",
+      css: "table#large-table > tbody .column-50",
       xpath: "//table[@id='large-table']/tbody//*[@class='column-50']"
     },
     table_cell_traversing: {
-      css: "#large-table tbody tr td:nth-of-type(50)",
+      css: "table#large-table tbody tr td:nth-of-type(50)",
       xpath: "//table[@id='large-table']//tbody//tr//td[50]"
     },
     table_cell_traversing_and_direct_desc: {
-      css: "#large-table > tbody > tr > td:nth-of-type(50)",
+      css: "table#large-table > tbody > tr > td:nth-of-type(50)",
       xpath: "//table[@id='large-table']/tbody/tr/td[50]"
     }
   }
