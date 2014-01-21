@@ -5,8 +5,12 @@ class LargeDOM < Base
 
   LOCATORS = {
     sibling_traversal: {
-      css: "div#siblings > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
-      xpath: "//div[contains(@id, 'siblings')]/div[1]/div[1]/div[1]"
+      # this works
+      css: "div#siblings > div:nth-of-type(1) > div:nth-of-type(1)",
+      xpath: "//div[@id='siblings']/div[1]/div[1]"
+      # this doesn't work
+      #css: "div#siblings > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1)",
+      #xpath: "//div[@id='siblings']/div[1]/div[1]/div[1]"
     }#,
 #    sibling_traversal_by_class: {
 #      css: "div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1 > div.item-1",
