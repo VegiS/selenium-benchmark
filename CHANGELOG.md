@@ -1,3 +1,7 @@
+#0.2.3
+
++ Fixed bugs in rake tasks to launch browsers
+
 #0.2.2
 
 + Added rake tasks to simplify launching each browser
