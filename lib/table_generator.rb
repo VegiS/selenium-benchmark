@@ -31,7 +31,7 @@ class TableGenerator
           data.strip!
         end
         datas.map! do |data|
-          data.to_f.round(2)
+          data.to_f.round(3)
         end
         count = 0
         harvest = []
