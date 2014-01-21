@@ -33,6 +33,13 @@ class TableGenerator
         datas.map! do |data|
           data.to_f.round(3)
         end
+        datas.map! do |data|
+          if data.to_s.split('.').last.size == 2
+            data.to_s + "0"
+          else
+            data
+          end
+        end
         count = 0
         harvest = []
         @titles.count.times do |i|

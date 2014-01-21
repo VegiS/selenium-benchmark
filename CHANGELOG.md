@@ -1,3 +1,7 @@
+#0.2.9
+
++ Improved the rounding so it will add a 0 if there are only 2 decimal places
+
 #0.2.8
 
 + Trimmed the Opera table header back to '12' from '12.16'
