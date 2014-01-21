@@ -67,7 +67,7 @@ class LargeDOM < Base
                  find(strategy => locator)
               end
             rescue Selenium::WebDriver::Error::NoSuchElementError => error
-              puts error
+              puts "(N/A)"
             end
           end
         end
