@@ -1,7 +1,7 @@
 require_relative 'base'
 require 'benchmark'
 
-class Tables < Base
+class SmallDOM < Base
 
   LOCATORS = {
     :header_id_and_class => {
@@ -38,11 +38,17 @@ class Tables < Base
     }
   }
 
-  def visit
+  attr_reader :driver
+
+  def initialize(driver)
+    @driver = driver
     go_to '/tables'
+    super
   end
 
-  def benchmark!
+  # The benchmarking approach was borrowed from
+  # http://rubylearning.com/blog/2013/06/19/how-do-i-benchmark-ruby-code/
+  def benchmark
     Benchmark.bmbm(27) do |bm|
       LOCATORS.each do |example, data|
         data.each do |strategy, locator|

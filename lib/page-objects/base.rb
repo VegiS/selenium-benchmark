@@ -16,4 +16,8 @@ class Base
     driver.get ENV['base_url'] + url
   end
 
+  def is_displayed?(locator)
+    find(locator).displayed?
+  end
+
 end

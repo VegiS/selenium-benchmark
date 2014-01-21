@@ -64,3 +64,7 @@ class TableGenerator
       puts Terminal::Table.new headings: headings, rows: rows
     end
 end
+
+#current_dir = File.join(File.dirname(File.expand_path(__FILE__)))
+#$stdout = File.new("#{current_dir}/../benchmarks/report.out", 'w')
+#$stdout.sync = true
