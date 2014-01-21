@@ -24,6 +24,7 @@ class TableGenerator
         log.gsub(/ using \w+/,'')
         @titles  = log.scan(/^.*_\w+/).uniq
         job_log = log.scan(/real.*/m).first
+        job_log.gsub!(/0.000000   0.000000   0.000000.*$/,'')
         datas    = job_log.scan(/\(.*\)/).each do |data|
           data.gsub!(/\)/,'')
           data.gsub!(/\(/,'')
