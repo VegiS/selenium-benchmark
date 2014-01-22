@@ -1,4 +1,4 @@
-# Selenium Benchmark 0.2.9 (1/21/2014)
+# Selenium Benchmark 0.2.10 (1/21/2014)
 A simple way to benchmark Selenium WebDriver performance across your various browsers
 
 ## Getting Started
