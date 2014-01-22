@@ -9,7 +9,9 @@ __NOTE: You will need to set up your local test machine with the Selenium browse
 2) `bundle install`  
 3) `rake server:init`  
 4) `rake server:start`  
-5) `rake -T` to get a full list of commands  
+5) Open a new terminal window
+
+`rake -T` to get a full list of commands  
 
 ```sh
 terminal$ rake -T
@@ -22,7 +24,7 @@ rake server:init                            # Pull in the the-internet after ini
 rake server:start                           # Start the web server
 ```
 
-6) In another terminal window, run your benchmarks against the browsers you want (one at a time)  
+6) Run your benchmarks against the browsers you want (one at a time)  
 
 ```sh
 # The version number is important for reporting.
