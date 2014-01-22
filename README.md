@@ -10,6 +10,9 @@ __NOTE: You will need to set up your local test machine with the various Seleniu
 3. `rake server:init`
 4. `rake server:start`
 5. In another terminal window, run your benchmarks against the browsers you want (one at a time)
+6. After running your benchmarks, type `rake report` to generate an aggregate data table
+
+## For Example
 
 ```sh
 terminal$ rake -T
@@ -25,6 +28,10 @@ rake server:start                           # Start the web server
 ```sh
 terminal$ rake benchmark:firefox['26']
 # The version number is important for reporting.
+terminal$ rake benchmark:internet_explorer['8']
+terminal$ rake benchmark:chrome['32']
 ```
 
-6. After running your benchmarks, type `rake report` to generate an aggregate data table
+```sh
+rake report
+```
