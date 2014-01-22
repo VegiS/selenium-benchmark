@@ -33,8 +33,11 @@ class TableGenerator
           data.to_f.round(3)
         end
         datas.map! do |data|
-          if data.to_s.split('.').last.size == 2
+          case data.to_s.split('.').last.size
+          when 2
             data.to_s + "0"
+          when 1
+            data.to_s + "00"
           else
             data
           end
