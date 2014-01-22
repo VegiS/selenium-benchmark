@@ -1,3 +1,7 @@
+#0.2.12
+
++ Cleaned up the README
+
 #0.2.11
 
 + Added rounding support for 0s in the data
