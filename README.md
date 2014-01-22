@@ -32,7 +32,7 @@ terminal$ rake benchmark:firefox['26']
 terminal$ rake benchmark:internet_explorer['08']
 terminal$ rake benchmark:internet_explorer['10']
 terminal$ rake benchmark:chrome['32']
-# Opera is the odd duck, requiring the full path to the Selenium standalone server instead.
+# Opera is the odd duck, requiring the full path to the Selenium standalone server
 terminal$ rake benchmark:opera['C:\drivers\selenium-server-standalone-2.39.0.jar']
 ```
 
