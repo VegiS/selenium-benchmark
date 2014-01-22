@@ -5,22 +5,11 @@ namespace :server do
     `git submodule update --init`
   end
 
-  desc 'Pull in the latest from the-internet'
-  task :update do
-    `git submodule update`
-  end
-
   desc 'Start the web server'
   task :start do
-    # Set up and start the-internet before running the test
-    # `cd the-internet`
-    # `bundle install`
-    # `ruby server.rb`
-  end
-
-  desc 'Stop the web server'
-  task :stop do
-    # tbd
+    Dir.chdir('the-internet')
+    `bundle`
+    `ruby server.rb`
   end
 
 end
