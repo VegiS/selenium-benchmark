@@ -26,12 +26,16 @@ rake server:start                           # Start the web server
 ```
 
 ```sh
-terminal$ rake benchmark:firefox['26']
 # The version number is important for reporting.
-terminal$ rake benchmark:internet_explorer['8']
+terminal$ rake benchmark:firefox['26']
+terminal$ rake benchmark:internet_explorer['08']
+terminal$ rake benchmark:internet_explorer['10']
 terminal$ rake benchmark:chrome['32']
+terminal$ rake benchmark:opera['C:\drivers\selenium-server-standalone-2.39.0.jar']
 ```
 
 ```sh
 rake report
 ```
+
+[![report output](https://www.dropbox.com/s/xm3tavgpx4mp0w7/Screenshot%202014-01-21%2021.24.42.png)](https://www.dropbox.com/s/xm3tavgpx4mp0w7/Screenshot%202014-01-21%2021.24.42.png)
