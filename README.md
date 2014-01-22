@@ -35,8 +35,4 @@ terminal$ rake benchmark:opera['C:\drivers\selenium-server-standalone-2.39.0.jar
 
 7) After running your benchmarks, type `rake report` to generate an aggregate data table  
 
-```sh
-rake report
-```
-
 ![report output](https://raw2.github.com/tourdedave/selenium-benchmark/develop/benchmarks/output.png)
