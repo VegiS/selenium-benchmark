@@ -21,7 +21,7 @@ task :report do
   gen.generate
 end
 
-namespace :run do
+namespace :benchmark do
 
   def launch
     `ruby lib/selenium-benchmark.rb`

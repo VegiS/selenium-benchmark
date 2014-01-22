@@ -1,13 +1,30 @@
 # Selenium Benchmark 0.2.9 (1/21/2014)
-A simple way to benchmark Selenium WebDriver across your various browsers
+A simple way to benchmark Selenium WebDriver performance across your various browsers
 
 ## Getting Started
+
+__NOTE: You will need to set up your local test machine with the various Selenium browser drivers in order to use all of the rake tasks.__
 
 1. `git clone https://github.com/tourdedave/selenium-benchmark.git`
 2. `bundle install`
 3. `rake server:init`
 4. `rake server:start`
-5. In another terminal, run your tests (see `rake -T` for a command listing)
-6. After running the browsers you care about, type `rake report` to generate a benchmark data table
+5. In another terminal window, run your benchmarks against the browsers you want (one at a time)
 
-__NOTE: You will need to set up your local test machine with the various Selenium browser drivers in order to use all of the rake tasks.__
+```sh
+terminal$ rake -T
+rake benchmark:chrome[version]              # Chrome
+rake benchmark:firefox[version]             # Firefox
+rake benchmark:internet_explorer[version]   # IE
+rake benchmark:opera[selenium_server_path]  # Opera
+rake report                                 # Generate report from benchmark data
+rake server:init                            # Pull in the the-internet after initial checkout
+rake server:start                           # Start the web server
+```
+
+```sh
+terminal$ rake benchmark:firefox['26']
+# The version number is important for reporting.
+```
+
+6. After running your benchmarks, type `rake report` to generate an aggregate data table
