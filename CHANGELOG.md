@@ -1,3 +1,8 @@
+#0.2.11
+
++ Added rounding support for 0s in the data
++ Finished the instructions in the README and included an image of the report output
+
 #0.2.10
 
 + Finished up rake tasks (and removed extraneous ones)
