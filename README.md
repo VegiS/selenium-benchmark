@@ -38,4 +38,4 @@ terminal$ rake benchmark:opera['C:\drivers\selenium-server-standalone-2.39.0.jar
 rake report
 ```
 
-[![report output](https://www.dropbox.com/s/xm3tavgpx4mp0w7/Screenshot%202014-01-21%2021.24.42.png)](https://www.dropbox.com/s/xm3tavgpx4mp0w7/Screenshot%202014-01-21%2021.24.42.png)
+[![report output](https://www.dropbox.com/s/xm3tavgpx4mp0w7/Screenshot%202014-01-21%2021.24.42.png)]
