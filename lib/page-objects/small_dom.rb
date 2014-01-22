@@ -58,7 +58,7 @@ class SmallDOM < Base
                  find(strategy => locator)
               end
             rescue Selenium::WebDriver::Error::NoSuchElementError
-              puts "(N/A)"
+              puts "( 0.0 )"
             end
           end
         end

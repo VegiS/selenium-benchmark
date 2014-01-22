@@ -1,3 +1,9 @@
+#0.2.10
+
++ Finished up rake tasks (and removed extraneous ones)
++ Added getting started instructions to the README
++ Applied a reporting fix for better handling of unsupported locator strategies in older browsers
+
 #0.2.9
 
 + Improved the rounding so it will add a 0 if there are only 2 decimal places
