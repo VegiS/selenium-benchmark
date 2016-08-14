@@ -1,4 +1,4 @@
-# Selenium Benchmark 0.4.0 (08/14/2016)
+# Selenium Benchmark 0.4.1 (08/14/2016)
 
 A simple way to benchmark Selenium WebDriver performance across various browsers
 
