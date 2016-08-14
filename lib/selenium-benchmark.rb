@@ -20,7 +20,7 @@ end
 
 if ENV['browser'] == 'internet_explorer'
   # TODO; Add OS detection -- ; for Windows, everything else is :
-  ENV['PATH'] = ENV['PATH'] + ":" + File.join(Dir.pwd, 'vendor/iedriver/2.53')
+  ENV['PATH'] = ENV['PATH'] + ":" + File.join(Dir.pwd, 'vendor/iedriver/2.53.1')
 end
 
 current_dir = File.join(File.dirname(File.expand_path(__FILE__)))
