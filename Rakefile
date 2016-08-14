@@ -32,12 +32,10 @@ namespace :benchmark do
     launch
   end
 
-  desc 'Opera (version 12.16)'
-  task :opera, :selenium_server_path do |t, args|
-    ENV['browser'] = 'opera'
-    ENV['browser_version'] = '12'
-    ENV['SELENIUM_SERVER_JAR'] = args[:selenium_server_path]
+  desc 'Safari'
+  task :safari, :version do |t, args|
+    ENV['browser'] = 'safari'
+    ENV['browser_version'] = args[:version]
     launch
   end
-
 end
