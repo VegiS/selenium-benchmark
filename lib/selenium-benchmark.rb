@@ -14,10 +14,12 @@ rescue Errno::ECONNREFUSED
 end
 
 if ENV['browser'] == 'chrome'
+  # TODO: Add OS Dection -- .exe for Windows, no extension for OSX
   Selenium::WebDriver::Chrome::Service.executable_path = File.join(Dir.pwd, 'vendor/chromedriver/2.23/chromedriver') 
 end
 
 if ENV['browser'] == 'internet_explorer'
+  # TODO; Add OS detection -- ; for Windows, everything else is :
   ENV['PATH'] = ENV['PATH'] + ":" + File.join(Dir.pwd, 'vendor/iedriver/2.53')
 end
 
