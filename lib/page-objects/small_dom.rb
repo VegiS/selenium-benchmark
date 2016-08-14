@@ -4,35 +4,41 @@ require 'benchmark'
 class SmallDOM < Base
 
   LOCATORS = {
-    :header_id_and_class => {
+    :id => {
+      id: 'table2'
+    },
+    :table_header_class => {
+      class: 'dues'
+    },
+    :table_header_id_and_class => {
       :css => "#table2 thead .dues",
       :xpath => "//table[@id='table2']//thead//*[@class='dues']"
     },
-    :header_id_class_and_direct_desc => {
+    :table_header_id_class_and_direct_desc => {
       :css => "#table2 > thead .dues",
       :xpath => "//table[@id='table2']/thead//*[@class='dues']"
     },
-    :header_traversing => {
+    :table_header_traversing => {
       :css => "#table2 thead tr th:nth-of-type(4)",
       :xpath => "//table[@id='table2']//thead//tr//th[4]"
     },
-    :header_traversing_and_direct_desc => {
+    :table_header_traversing_and_direct_desc => {
       :css => "#table2 > thead > tr > th:nth-of-type(4)",
       :xpath => "//table[@id='table2']/thead/tr/th[4]"
     },
-    :cell_id_and_class => {
+    :table_cell_id_and_class => {
       :css => "#table2 tbody .dues",
       :xpath => "//table[@id='table2']//tbody//*[@class='dues']"
     },
-    :cell_id_class_and_direct_desc => {
+    :table_cell_id_class_and_direct_desc => {
       :css => "#table2 > tbody .dues",
       :xpath => "//table[@id='table2']/tbody//*[@class='dues']"
     },
-    :cell_traversing => {
+    :table_cell_traversing => {
       :css => "#table2 tbody tr td:nth-of-type(4)",
       :xpath => "//table[@id='table2']//tbody//tr//td[4]"
     },
-    :cell_traversing_and_direct_desc => {
+    :table_cell_traversing_and_direct_desc => {
       :css => "#table2 > tbody > tr > td:nth-of-type(4)",
       :xpath => "//table[@id='table2']/tbody/tr/td[4]"
     }
@@ -42,7 +48,7 @@ class SmallDOM < Base
 
   def initialize(driver)
     @driver = driver
-    go_to '/tables'
+    visit '/tables'
     super
   end
 

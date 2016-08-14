@@ -50,7 +50,7 @@ class LargeDOM < Base
 
   def initialize(driver)
     @driver = driver
-    go_to '/large'
+    visit '/large'
     is_displayed?(id: 'siblings')
     super
   end

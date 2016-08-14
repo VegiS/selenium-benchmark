@@ -8,12 +8,16 @@ class Base
     @driver = driver
   end
 
-  def find(locator)
-    driver.find_element locator
+  def visit(url)
+    if url.start_with? 'http'
+      driver.get url
+    else
+      driver.get ENV['base_url'] + url
+    end
   end
 
-  def go_to(url)
-    driver.get ENV['base_url'] + url
+  def find(locator)
+    driver.find_element locator
   end
 
   def is_displayed?(locator)

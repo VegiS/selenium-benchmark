@@ -1,19 +1,3 @@
-namespace :server do
-
-  desc 'Pull in the the-internet after initial checkout'
-  task :init do
-    `git submodule update --init`
-  end
-
-  desc 'Start the web server'
-  task :start do
-    Dir.chdir('the-internet')
-    `bundle`
-    `ruby server.rb`
-  end
-
-end
-
 desc 'Generate report from benchmark data'
 task :report do
   require_relative 'lib/table_generator'
