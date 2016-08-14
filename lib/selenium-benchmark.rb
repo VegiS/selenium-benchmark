@@ -17,6 +17,10 @@ if ENV['browser'] == 'chrome'
   Selenium::WebDriver::Chrome::Service.executable_path = File.join(Dir.pwd, 'vendor/chromedriver/2.23/chromedriver') 
 end
 
+if ENV['browser'] == 'internet_explorer'
+  Selenium::WebDriver::Chrome::Service.executable_path = File.join(Dir.pwd, 'vendor/iedriver/2.53/IEDriverServer.exe') 
+end
+
 current_dir = File.join(File.dirname(File.expand_path(__FILE__)))
 
 TARGETS.each do |target|
